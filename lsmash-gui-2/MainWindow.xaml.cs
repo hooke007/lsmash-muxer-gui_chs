@@ -75,7 +75,7 @@ namespace lsmash_gui_2
             Action<TextBlock, string> logAct = new Action<TextBlock, string>(UpdateLog);
             if (string.IsNullOrEmpty(model.OutputPath))
             {
-                System.Windows.MessageBox.Show("Output not set!");
+                System.Windows.MessageBox.Show("未设置输出！");
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace lsmash_gui_2
 
             if (!vTrackFlag)
             {
-                System.Windows.MessageBox.Show("Input video not exist");
+                System.Windows.MessageBox.Show("输入视频不存在");
                 return;
             }
             else
@@ -168,9 +168,9 @@ namespace lsmash_gui_2
                                 this.ProcessBar.Value = 0;
                                 this.ProcessBar.IsIndeterminate = true;
                             }));
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing RAW video with RAW audio....");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装 RAW 视频和 RAW 音频中 ....");
                             ExcuteDosCommand(Excutable + argMuxer);
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing finished.");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装完成。");
                         }
                         else
                         {
@@ -209,9 +209,9 @@ namespace lsmash_gui_2
                                 this.ProcessBar.Value = 0;
                                 this.ProcessBar.IsIndeterminate = true;
                             }));
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing RAW video....");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装 RAW 视频中 ....");
                             ExcuteDosCommand(Excutable + argMuxer);
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing finished.");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装完成。");
 
                             // Track Remux
                             argMuxer = " -i \"" + vTrackMP4Path + "\"";
@@ -245,9 +245,9 @@ namespace lsmash_gui_2
                                 this.ProcessBar.Value = 0;
                                 this.ProcessBar.IsIndeterminate = true;
                             }));
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing video and audio....");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装视频和音频中 ....");
                             ExcuteDosCommand(Excutable + argMuxer);
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing finished.");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装完成。");
                             System.IO.File.Delete(@vTrackMP4Path);
                         }
                     }
@@ -290,9 +290,9 @@ namespace lsmash_gui_2
                             this.ProcessBar.IsIndeterminate = true;
                         }));
                         Excutable = "\"" + AppDomain.CurrentDomain.BaseDirectory + "muxer.exe" + "\"";
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing RAW video....");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装 RAW 视频中 ....");
                         ExcuteDosCommand(Excutable + argMuxer);
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing finished.");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装完成。");
                     }
                 }
                 else
@@ -334,9 +334,9 @@ namespace lsmash_gui_2
                                 this.ProcessBar.Value = 0;
                                 this.ProcessBar.IsIndeterminate = true;
                             }));
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing RAW aideo....");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装 RAW 音频中 ....");
                             ExcuteDosCommand(Excutable + argMuxer);
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Muxing finished.");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "封装完成。");
 
                             // Track Remux
                             argMuxer = " -i \"" + model.VideoPath + "\"";
@@ -360,9 +360,9 @@ namespace lsmash_gui_2
                                 this.ProcessBar.Value = 0;
                                 this.ProcessBar.IsIndeterminate = true;
                             }));
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing video and audio....");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装视频和音频中 ....");
                             ExcuteDosCommand(Excutable + argMuxer);
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing finished.");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装完成。");
                             System.IO.File.Delete(@aTrackMP4Path);
                         }
                         else
@@ -400,9 +400,9 @@ namespace lsmash_gui_2
                                 this.ProcessBar.Value = 0;
                                 this.ProcessBar.IsIndeterminate = true;
                             }));
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing video and audio....");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装视频和音频中 ....");
                             ExcuteDosCommand(Excutable + argMuxer);
-                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing finished.");
+                            LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装完成。");
                         }
                     }
                     else
@@ -423,9 +423,9 @@ namespace lsmash_gui_2
                             this.ProcessBar.Value = 0;
                             this.ProcessBar.IsIndeterminate = true;
                         }));
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing video....");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装视频中 ....");
                         ExcuteDosCommand(Excutable + argMuxer);
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing finished.");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装完成。");
                     }
                 }
 
@@ -452,7 +452,7 @@ namespace lsmash_gui_2
                             this.ProcessBar.Value = 0;
                             this.ProcessBar.IsIndeterminate = true;
                         }), DispatcherPriority.Background);
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "extract Chapter...");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "导出章节 ...");
                         ExcuteDosCommand("\"" + AppDomain.CurrentDomain.BaseDirectory + "boxdumper.exe\"" + boxdumperArgs);
                         string timecodeArgs = " --track 1 --timecode \"" + model.TimecodePath +
                                 "\" \"" + timecodeTmp + "\" \"" + timecodeTmpAdd + "\"";
@@ -462,14 +462,14 @@ namespace lsmash_gui_2
                             this.ProcessBar.Value = 0;
                             this.ProcessBar.IsIndeterminate = true;
                         }), DispatcherPriority.Background);
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Editing Timecode...");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "编辑时间码中 ...");
                         ExcuteDosCommand("\"" + AppDomain.CurrentDomain.BaseDirectory + "timelineeditor.exe\"" + timecodeArgs);
                         this.Dispatcher.BeginInvoke(new Action(() =>
                         {
                             this.ProcessBar.Value = 0;
                             this.ProcessBar.IsIndeterminate = true;
                         }));
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Adding Chapter...");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "添加章节中 ...");
                         // remux chapter
                         argMuxer = " -i \"" + timecodeTmpAdd + "\"";
                         argMuxer += " --chapter \"" + chapterTmp + "\"";
@@ -481,9 +481,9 @@ namespace lsmash_gui_2
                             this.ProcessBar.Value = 0;
                             this.ProcessBar.IsIndeterminate = true;
                         }), DispatcherPriority.Background);
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Reuxing video....");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "重新封装视频中 ....");
                         ExcuteDosCommand(Excutable + argMuxer);
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Timecode editing finished.");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "时间码编辑完成。");
                         System.IO.File.Delete(@chapterTmp);
                         System.IO.File.Delete(@timecodeTmpAdd);
                         System.IO.File.Delete(@timecodeTmp);
@@ -498,9 +498,9 @@ namespace lsmash_gui_2
                             this.ProcessBar.Value = 0;
                             this.ProcessBar.IsIndeterminate = true;
                         }));
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Editing Timecode...");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "编辑时间码中 ...");
                         ExcuteDosCommand("\"" + AppDomain.CurrentDomain.BaseDirectory + "timelineeditor.exe\"" + timecodeArgs);
-                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "Timecode editing finished.");
+                        LogBox.Dispatcher.BeginInvoke(logAct, LogBox, "时间码编辑完成。");
                         System.IO.File.Delete(@timecodeTmp);
                     }
                 }
@@ -536,7 +536,7 @@ namespace lsmash_gui_2
 
             catch (Exception)
             {
-                System.Windows.MessageBox.Show("Error, unknown command");
+                System.Windows.MessageBox.Show("错误，未知的命令");
             }
         }
 
@@ -544,7 +544,7 @@ namespace lsmash_gui_2
         {
             Action<TextBlock, string> logAct = new Action<TextBlock, string>(UpdateLog);
             string outputMsg = "";
-            string processedByte = @"Importing:\s*([\d\.]+)\s*(bytes)*";
+            string processedByte = @"导入中：\s*([\d\.]+)\s*(bytes)*";
             double totalSize = model.comm.aSize + model.comm.vSize;
             double pBarValue = 0;
             if (!string.IsNullOrEmpty(e.Data))
@@ -598,7 +598,7 @@ namespace lsmash_gui_2
 
                 if (!model.OpenVideoFile(ofd.FileName))
                 {
-                    System.Windows.MessageBox.Show("Not a Video File!");
+                    System.Windows.MessageBox.Show("非视频文件！");
                 }
             }
         }
@@ -624,7 +624,7 @@ namespace lsmash_gui_2
 
                 if (!model.OpenAudioFile(ofd.FileName))
                 {
-                    System.Windows.MessageBox.Show("Not a Audio File!");
+                    System.Windows.MessageBox.Show("非音频文件！");
                 }
             }
         }
@@ -691,7 +691,7 @@ namespace lsmash_gui_2
         private void AboutBtn_Click(object sender, RoutedEventArgs e)
         {
             //about
-            System.Windows.MessageBox.Show("L-SMASH Muxer GUI 2\n\nThis is a GUI which use l-smash to mux video and audio");
+            System.Windows.MessageBox.Show("L-SMASH Muxer GUI 2\n\n用于封装音视频的l-smash的图形界面");
         }
 
         private string IsSingleFile(System.Windows.DragEventArgs args)
@@ -736,7 +736,7 @@ namespace lsmash_gui_2
 
             if (!model.OpenVideoFile(fileName))
             {
-                System.Windows.MessageBox.Show("Not a Video File!");
+                System.Windows.MessageBox.Show("非视频文件！");
             }
         }
 
@@ -757,7 +757,7 @@ namespace lsmash_gui_2
 
             if (!model.OpenAudioFile(fileName))
             {
-                System.Windows.MessageBox.Show("Not a Audio File!");
+                System.Windows.MessageBox.Show("非音频文件！");
             }
         }
 
@@ -777,7 +777,7 @@ namespace lsmash_gui_2
             }
             else
             {
-                System.Windows.MessageBox.Show("Unsupport Format!");
+                System.Windows.MessageBox.Show("不支持的格式！");
             }
         }
 
@@ -797,7 +797,7 @@ namespace lsmash_gui_2
             }
             else
             {
-                System.Windows.MessageBox.Show("Unsupport Format!");
+                System.Windows.MessageBox.Show("不支持的格式！");
             }
         }
 

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:lsmash_gui_2"
         mc:Ignorable="d"
-        Title="L-SMASH GUI 2" Height="600" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="L-SMASH GUI 2 chs" Height="600" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Window.Resources>
         <Style TargetType="TextBox">
             <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
@@ -24,7 +24,7 @@
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <GroupBox Grid.Row="0" Header="Video">
+        <GroupBox Grid.Row="0" Header="视频">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="27"></RowDefinition>
@@ -37,7 +37,7 @@
                     <ColumnDefinition Width="23"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0">Video Input</Label>
+                <Label Grid.Row="0" Grid.Column="0">视频输入</Label>
                 <TextBox Name="VideoPath" Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding Path=VideoPath}" PreviewDrop="VideoPath_PreviewDrop"></TextBox>
                 <Button Name="VideoFileBtn" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Height="22" Width="23" Click="VideoFileBtn_Click">&#x2505;</Button>
 
@@ -51,7 +51,7 @@
                     <ComboBox Grid.Row="0" Grid.Column="0" IsEditable="True" Margin="2"
                               ItemsSource="{Binding Path=FPSValues}"
                               SelectedValue="{Binding Path=vTrackFPS}"></ComboBox>
-                    <Label Grid.Row="0" Grid.Column="1">Name</Label>
+                    <Label Grid.Row="0" Grid.Column="1">名称</Label>
                     <TextBox AllowDrop="False" Grid.Row="0" Grid.Column="2" Margin="2" Text="{Binding Path=VideoTrackName}"></TextBox>
                 </Grid>
                 <Button Name="ClearVNameBtn" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Height="22" Width="23" Click="ClearVNameBtn_Click">&#x2573;</Button>
@@ -69,7 +69,7 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Header="Audio">
+        <GroupBox Grid.Row="1" Header="音频">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="27"></RowDefinition>
@@ -82,11 +82,11 @@
                     <ColumnDefinition Width="23"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0">Audio Input</Label>
+                <Label Grid.Row="0" Grid.Column="0">音频输入</Label>
                 <TextBox Name="AudioPath" Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding Path=AudioPath}" PreviewDrop="AudioPath_PreviewDrop"></TextBox>
                 <Button Name="AudioFileBtn" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Height="22" Width="23" Click="AudioFileBtn_Click">&#x2505;</Button>
 
-                <Label Grid.Row="1" Grid.Column="0">Language</Label>
+                <Label Grid.Row="1" Grid.Column="0">语言</Label>
                 <Grid Grid.Row="1" Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -96,12 +96,12 @@
                     <ComboBox Name="LanguageBox" Grid.Row="0" Grid.Column="0" IsEditable="True" Margin="2"
                               ItemsSource="{Binding Path=LangCodes}"
                               SelectedValue="{Binding Path=LanguageCode}"></ComboBox>
-                    <Label Grid.Row="0" Grid.Column="1">Name</Label>
+                    <Label Grid.Row="0" Grid.Column="1">名称</Label>
                     <TextBox AllowDrop="False" Grid.Row="0" Grid.Column="2" Margin="2" Text="{Binding Path=AudioTrackName}"></TextBox>
                 </Grid>
                 <Button Name="ClearANameBtn" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Height="22" Width="23" Click="ClearANameBtn_Click">&#x2573;</Button>
 
-                <Label Grid.Row="2" Grid.Column="0" Content="Encoder Delay"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="编码器延迟"/>
                 <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
                     <Grid Margin="2" MaxWidth="145" Width="145">
                         <Grid.ColumnDefinitions>
@@ -123,14 +123,14 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="2" Header="Chapter">
+        <GroupBox Grid.Row="2" Header="章节">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="95"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0">Chapters File</Label>
+                <Label Grid.Column="0">章节文件</Label>
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -148,14 +148,14 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="3" Header="Timecode">
+        <GroupBox Grid.Row="3" Header="时间码">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="95"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0">Timecode File</Label>
+                <Label Grid.Column="0">时间码文件</Label>
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -173,14 +173,14 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="4" Header="Output">
+        <GroupBox Grid.Row="4" Header="输出">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="95"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0">Muxed Output</Label>
+                <Label Grid.Column="0">混流输出</Label>
                 <Grid Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"></ColumnDefinition>
@@ -197,11 +197,11 @@
             </Grid>
         </GroupBox>
 
-        <GroupBox Grid.Row="5" Header="Log">
+        <GroupBox Grid.Row="5" Header="日志">
             <TextBlock Name="LogBox" Margin="2" TextWrapping="Wrap"/>
         </GroupBox>
 
-        <GroupBox Grid.Row="6" Header="Status">
+        <GroupBox Grid.Row="6" Header="状态">
             <Grid Margin="0">
                 <ProgressBar x:Name="ProcessBar" Height="18" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="442"/>
                 <TextBlock Text="{Binding ElementName=ProcessBar, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -222,10 +222,10 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Button Name="AboutBtn" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0" Height="23" Width="75" Click="AboutBtn_Click">About</Button>
+            <Button Name="AboutBtn" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="0" Height="23" Width="75" Click="AboutBtn_Click">关于</Button>
 
-            <Button Name="ClearBtn" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3" Margin="0" Height="23" Width="75" Click="ClearBtn_Click">Clear</Button>
-            <Button Name="StartBtn" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Margin="0" Height="23" Width="75" Click="StartBtn_Click">Start</Button>
+            <Button Name="ClearBtn" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3" Margin="0" Height="23" Width="75" Click="ClearBtn_Click">清除</Button>
+            <Button Name="StartBtn" FontWeight="Bold" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4" Margin="0" Height="23" Width="75" Click="StartBtn_Click">启动</Button>
 
             <Label Grid.Row="1" Grid.Column="0" Margin="0">v2.1b</Label>
         </Grid>
